@@ -4,16 +4,18 @@ const initialState = {
   items: [],
 };
 
-export const todoSlice = createSlice ({
-    name: 'todos',
-    initialState,
-    reducers: {
-        addTodo: (state) => {},
-        removeTodo: (state) => {},
-        clearTodos: (state) => {}
-    }
-})
+export const todoSlice = createSlice({
+  name: "todos",
+  initialState,
+  reducers: {
+    addTodo: (state) => {},
+    removeTodo: (state) => {},
+    clearTodos: () => {
+      return { items: [] };
+    },
+  },
+});
 
-export const {} = todoSlice.actions
+export const { addTodo, removeTodo, clearTodos } = todoSlice.actions;
 
-export default todoSlice.reducer
+export default todoSlice.reducer;
