@@ -11,7 +11,14 @@ export const todoSlice = createSlice({
     addTodo: (state, action) => {
         return {items:[...state.items, action.payload]}
     },
-    removeTodo: (state) => {},
+    removeTodo: (state, action) => {
+        let array = [...state.items]
+        let index = action.payload
+        if (index !== -1) {
+            array.splice(index, 1)
+            return {items:array}
+        }
+    },
     clearTodos: () => {
       return { items: [] };
     },
