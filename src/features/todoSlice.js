@@ -8,7 +8,9 @@ export const todoSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    addTodo: (state) => {},
+    addTodo: (state, action) => {
+        return {items:[...state.items, action.payload]}
+    },
     removeTodo: (state) => {},
     clearTodos: () => {
       return { items: [] };
