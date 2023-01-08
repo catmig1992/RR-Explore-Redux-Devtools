@@ -5,9 +5,13 @@ const initialState = {
 };
 
 export const todoSlice = createSlice ({
-    name: 'todo',
+    name: 'todos',
     initialState,
-    reducers: {}
+    reducers: {
+        addTodo: (state) => {},
+        removeTodo: (state) => {},
+        clearTodos: (state) => {}
+    }
 })
 
 export const {} = todoSlice.actions
